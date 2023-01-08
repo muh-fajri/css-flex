@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <style>
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+* {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+    }
+    body {
+    font-family: sans-serif;
+    background-image: url(abstract-flowing-neon-wave-background.jpg);
+    }
+    h1 {
+    color: #efefef;
+    text-align:center;
+    padding: 10px 20px;
+    }
+    /* result and flex box */
+    .flex, .result {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    margin: 30px;
+    padding: 30px;
+    background: -o-linear-gradient(
+        315deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 20px;
+    padding: 30px;
+    }
+    .flex {
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    color: #efefef;
+    }
+    .result {
+    height: 250px;
+    }
+    .box {
+    padding:20px;
+    border-radius:20px;
+    color:white;
+    font-weight: bold;
+    min-width:90px;
+    width:120px;
+    text-align:center;
+    background: -o-linear-gradient(
+        315deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    }
+    .justify-content, .flex-direction, .flex-wrap,
+    .align-items, .align-content {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px;
+    line-height: 25px;
+    background: -o-linear-gradient(
+        315deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 0px;
+    }
+    .flex-title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Playing with CSS Flex<br/>(made by fajri)</h1>
+    <div class="result">
+      <div class="box">1 (One)</div>
+      <div class="box">2 (Two)</div>
+      <div class="box">3 (Three)</div>
+      <div class="box">4 (Four)</div>
+      <div class="box">5 (Five)</div>
+    </div>
+    <div class="flex">
+      <div class="justify-content">
+        <p class="flex-title">justify content</p>
+        <p><input type="radio" name="justify" value="flex-start"/> Flex Start (default)</p>
+        <p><input type="radio" name="justify" value="flex-end"/> Flex End</p>
+        <p><input type="radio" name="justify" value="center"/> Center</p>
+        <p><input type="radio" name="justify" value="space-between"/> Space Between</p>
+        <p><input type="radio" name="justify" value="space-around"/> Space Around</p>
+        <p><input type="radio" name="justify" value="space-evenly"/> Space Evenly</p>
+      </div>
+      <div class="flex-direction">
+        <p class="flex-title">flex direction</p>
+        <p><input type="radio" name="flexdir" value="row"/> Row (default)</p>
+        <p><input type="radio" name="flexdir" value="row-reverse"/> Row Reverse</p>
+        <p><input type="radio" name="flexdir" value="column"/> Column</p>
+        <p><input type="radio" name="flexdir" value="column-reverse"/> Column Reverse</p>
+      </div>
+      <div class="flex-wrap">
+        <p class="flex-title">flex wrap</p>
+        <p><input type="radio" name="flexwrap" value="nowrap"/> Nowrap (default)</p>
+        <p><input type="radio" name="flexwrap" value="wrap"/> Wrap</p>
+        <p><input type="radio" name="flexwrap" value="wrap-reverse"/> Wrap Reverse</p>
+      </div>
+      <div class="align-items">
+        <p class="flex-title">align items</p>
+        <p><input type="radio" name="alignitems" value="flex-start"/> Flex Start</p>
+        <p><input type="radio" name="alignitems" value="flex-end"/> Flex End</p>
+        <p><input type="radio" name="alignitems" value="center"/> Center</p>
+        <p><input type="radio" name="alignitems" value="stretch"/> Stretch (default)</p>
+        <p><input type="radio" name="alignitems" value="baseline"/> Baseline</p>
+      </div>
+      <div class="align-content">
+        <p class="flex-title">align content</p>
+        <p><input type="radio" name="aligncontent" value="flex-start"/> Flex Start</p>
+        <p><input type="radio" name="aligncontent" value="flex-end"/> Flex End</p>
+        <p><input type="radio" name="aligncontent" value="center"/> Center</p>
+        <p><input type="radio" name="aligncontent" value="stretch"/> Stretch</p>
+        <p><input type="radio" name="aligncontent" value="space-between"/> Space Between</p>
+        <p><input type="radio" name="aligncontent" value="space-around"/> Space Around</p>
+      </div>
+    </div>
+  </div>
+  <script>
+	const justifies = document.querySelectorAll('input[name="justify"]');
+	for(const justify of justifies){
+	  justify.addEventListener('change', justifyContent);
+	}
+	function justifyContent(e) {
+	  console.log(e);
+	  if (this.checked) {
+	    document.querySelector('.result').style.justifyContent = this.value;
+	  }
+	}
+	
+	const flexdirs = document.querySelectorAll('input[name="flexdir"]');
+	for(const flexdir of flexdirs){
+	  flexdir.addEventListener('change', flexDirection);
+	}
+	function flexDirection(e) {
+	  console.log(e);
+	  if (this.checked) {
+	    document.querySelector('.result').style.flexDirection = this.value;
+	  }
+	}
+	
+	const flexwraps = document.querySelectorAll('input[name="flexwrap"]');
+	for(const flexwrap of flexwraps){
+	  flexwrap.addEventListener('change', flexWrap);
+	}
+	function flexWrap(e) {
+	  console.log(e);
+	  if (this.checked) {
+	    document.querySelector('.result').style.flexWrap = this.value;
+	  }
+	}
+	
+	const alignitems = document.querySelectorAll('input[name="alignitems"]');
+	for(const alignitem of alignitems){
+	  alignitem.addEventListener('change', alignItems);
+	}
+	function alignItems(e) {
+	  console.log(e);
+	  if (this.checked) {
+	    document.querySelector('.result').style.alignItems = this.value;
+	  }
+	}
+	
+	const aligncontents = document.querySelectorAll('input[name="aligncontent"]');
+	for(const aligncontent of aligncontents){
+	  aligncontent.addEventListener('change', alignContents);
+	}
+	function alignContents(e) {
+	  console.log(e);
+	  if (this.checked) {
+	    document.querySelector('.result').style.alignContent = this.value;
+	  }
+	}
+  </script>
+</body>
+</html>
